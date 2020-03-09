@@ -1,3 +1,4 @@
 bundle install
 rails webpacker:install
 
+creare data architecture documentation
