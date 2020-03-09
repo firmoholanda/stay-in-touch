@@ -24,7 +24,6 @@ gem 'jquery-rails'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'font-awesome-rails'
 gem 'faker', '1.7.3'
-gem 'webpacker', '~> 4.0'
 
 # Use for testing
 gem 'rails-controller-testing'
@@ -55,6 +54,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring  
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'webpacker', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
