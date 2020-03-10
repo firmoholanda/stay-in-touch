@@ -16,4 +16,13 @@ class FriendshipsController < ApplicationController
   def index
     @friendships = current_user.friendships
   end
+
+  def update
+    active_friend = User.find(params[:id])
+    friendship = current_user.inverse_friendships.find_by(user_id: active_friend.id)
+    friendship.update(approved: 'true')
+    friendship.save
+    redirect_to request.referrer
+  end
+
 end
