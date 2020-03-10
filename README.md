@@ -63,6 +63,10 @@ TBA
 
 ## Authors
 
+firmo hollanda
+
+roodz fernando fleurant 
+
 TBA
 
 ## 🤝 Contributing
