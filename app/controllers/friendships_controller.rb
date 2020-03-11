@@ -6,10 +6,11 @@ class FriendshipsController < ApplicationController
   def create
     user = User.find(params[:id])
     friendship = current_user.friendships.create(friend_id: user.id, approved: false)
+    
     if friendship.save
-      redirect_to request.referrer, notice: "friend request was sent."
+      flash[:notice] = "friend request was sent."
     else
-      redirect_to :back, alert: "friend request failed."
+      flash[:alert] = "friend request failed."
     end
   end
 
@@ -21,8 +22,12 @@ class FriendshipsController < ApplicationController
     active_friend = User.find(params[:id])
     friendship = current_user.inverse_friendships.find_by(user_id: active_friend.id)
     friendship.update(approved: 'true')
-    friendship.save
-    redirect_to request.referrer
+    
+    if friendship.save
+      flash[:notice] = "friend updated."
+    else
+      flash[:alert] = "friend failed to update."
+    end
   end
 
 end

@@ -1,26 +1,39 @@
 require "rails_helper"
 
 RSpec.describe FriendshipsController, type: :controller do
+
+  let(:user) { FactoryBot.create :user }
+  before { sign_in user }
+
+  describe '#new' do
+    it 'should initialize empty friendship' do
+      get :new, params: { id: user.id }
+      expect(user.friendships.empty?).to eql(true)
+    end
+  end
   
-  before :each do
-    @user1 = User.create(name: "user01", email: "example-01@example.com", password: "password", password_confirmation: "password")
-    @user2 = User.create(name: "user02", email: "example-02@example.com", password: "password", password_confirmation: "password")
+  describe '#create' do
+    it 'should create a friend request' do
+      expect(user.friendships.empty?).to eql(true)
+      post :create, params: { id: user.id }
+      expect(user.friendships.empty?).to eql(false)
+    end
+  end
+  
+  describe '#index' do
+    it 'should initialize empty friendship index' do
+      get :index, params: { id: user.id }
+      expect(user.friendships.empty?).to eql(true)
+    end
   end
 
-  it "# creates a valid approved_friendship" do    
-    approved_friendship = @user1.friendships.create(friend_id: @user2.id, approved: true)
-    approved_friendship.approved = true
-    expect(approved_friendship).to be_valid
+  describe '#update' do
+    it 'should update friendship' do
+      expect(user.friendships.empty?).to eql(true)
+      post :create, params: { id: user.id }
+      patch :update, params: { id: user.id }
+      expect(user.friendships.empty?).to eql(false)
+    end
   end
-
-  it "# creates a valid pending_friendship" do
-    pending_friendship = @user1.friendships.create(friend_id: @user2.id, approved: false)
-    expect(pending_friendship).to be_valid
-  end
-
-  it "# creates a invalid friendship" do
-    friendship = Friendship.new(friend_id: "", approved: false)
-    expect(friendship).to_not be_valid
-  end
-
+  
 end

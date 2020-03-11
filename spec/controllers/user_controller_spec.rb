@@ -1,20 +1,24 @@
 require "rails_helper"
 
 RSpec.describe UsersController, type: :controller do
+  
+  let(:user) { FactoryBot.create :user }
+  before { sign_in user }
 
-  it "validates create user is correct" do
-    user = User.create(name: "user01", email: "example-01@example.com", password: "password", password_confirmation: "password")
-    expect(user.valid?).to be(true)
+  describe '#index' do
+    it 'should return a list of all users' do
+      10.times { FactoryBot.create :user }
+      get :index
+      expect(assigns(:users).length).to eql(10)
+    end
   end
 
-  it "validates name have mora than 50 chars" do
-    user = User.new(name: "x" * 55)
-    expect(user.valid?).to be(false)
-  end
-
-  it "validates name email and password" do
-    user = User.new(name: "", email: "", password: "")
-    expect(user.valid?).to be(false)
+  describe '#show' do
+    it 'should return the user with given id' do
+      new_user = FactoryBot.create :user
+      get :show, params: { id: new_user.id }
+      expect(assigns(:user)).to eql(new_user)
+    end
   end
 
 end
