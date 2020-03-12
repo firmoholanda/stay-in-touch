@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   context 'validation tests' do
     it 'user is not valid without a name' do
       user = User.new
-      expect(user).to not not_valid?
+      expect(user).to not_valid?
     end
   end
 
