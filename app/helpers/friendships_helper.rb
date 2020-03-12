@@ -9,5 +9,4 @@ module FriendshipsHelper
     def friend?(user)
         friend_list.include?(user)
     end
-
 end
