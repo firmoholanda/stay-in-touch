@@ -13,11 +13,9 @@ class FriendshipsController < ApplicationController
     friendship = current_user.friendships.create(passive_friend_id: user.id, approved: false)
 
     if friendship.save
-      redirect_to request.referrer
-      flash[:notice] = "friend request was sent."
+      redirect_to users_path, notice: "friend request was sent."
     else
-      redirect_to :back
-      flash[:alert] = "friend request failed."
+      redirect_to users_path, alert: "friend request failed."
     end
   end
 
@@ -26,11 +24,9 @@ class FriendshipsController < ApplicationController
     friendship = current_user.inverse_friendships.find_by(active_friend_id: active_friend.id)
 
     if friendship.destroy
-      redirect_to request.referrer
-      flash[:notice] = "friend removed."
+      redirect_to users_path, notice: "friend removed."
     else
-      redirect_to request.referrer
-      flash[:alert] = "friend failed to update."
+      redirect_to users_path, alert: "friend failed to update."
     end
   end
 
@@ -40,11 +36,9 @@ class FriendshipsController < ApplicationController
     friendship.update(approved: 'true')
 
     if friendship.save
-      redirect_to request.referrer
-      flash[:notice] = "friend updated."
+      redirect_to users_path, notice: "friend updated."
     else
-      redirect_to request.referrer
-      flash[:alert] = "friend failed to update."
+      redirect_to users_path, alert: "friend failed to update."
     end
   end
 
