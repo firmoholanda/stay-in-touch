@@ -11,7 +11,7 @@ RSpec.describe FriendshipsController, type: :controller do
       expect(user.friendships.empty?).to eql(true)
     end
   end
-  
+
   describe '#create' do
     it 'should create a friend request' do
       expect(user.friendships.empty?).to eql(true)
@@ -19,7 +19,7 @@ RSpec.describe FriendshipsController, type: :controller do
       expect(user.friendships.empty?).to eql(false)
     end
   end
-  
+
   describe '#index' do
     it 'should initialize empty friendship index' do
       get :index, params: { id: user.id }
@@ -35,5 +35,4 @@ RSpec.describe FriendshipsController, type: :controller do
       expect(user.friendships.empty?).to eql(false)
     end
   end
-  
 end
