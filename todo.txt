@@ -5,3 +5,10 @@ feature-03-deploy
 feature-04-final-touches
 
 release
+
+
+
+tests
+post and comments - fernando
+
+user and friendships - firmo

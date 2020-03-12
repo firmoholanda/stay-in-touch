@@ -1,89 +1,95 @@
-# Scaffold for social media app with Ruby on Rails
+# 📃 stay-in-touch
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
-
-## Built With
-
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
-
-## Live Demo
-
-TBA
-
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
-
-### Setup
-
-Instal gems with:
-
-```
-bundle install
-```
-
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
-```
+in this project, we build a social media app that allows users to post comments, like or dislike a comment, send a friendship invitation and display all information on a timeline.
 
 
 
-### Usage
+## 📡 technologies used
 
-Start server with:
+- ruby
+- rails
+- bootstrap
+- jquery
+- faker
+- bcrypt
+- will_paginate
+- rubocop
+- webpacker
+- postgres
+- git
+
+ruby, rails, bootstrap, jquery, faker, bcrypt, will_paginate, rubocop, webpacker, postgres and git was used on this project.
+
+
+
+## 🚀 the project
+
+this project can be found in https://github.com/firmoholanda/stay-in-touch
+
+
+### ✨ [live version](https://stay-in-touch-firmoholanda.herokuapp.com/)
+
+<a href="https://stay-in-touch-firmoholanda.herokuapp.com/" target="_blank">
+    <img alt="app image" src="https://github.com/firmoholanda/stay-in-touch/blob/pre-production/app/assets/images/app-image.png"/>
+</a>
+
+
+
+## 🔨 instructions
+
+To get started with the app, clone the repo and then install the needed gems:
 
 ```
-    rails server
+$ bundle install --without production
 ```
 
-Open `http://localhost:3000/` in your browser.
-
-### Run tests
+Next, migrate the database:
 
 ```
-    rpsec --format documentation
+$ rails db:migrate
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
+Finally, run the test suite to verify that everything is working correctly:
 
-### Deployment
+```
+$ rails test
+```
 
-TBA
+If the test suite passes, you'll be ready to run the app in a local server:
 
-## Authors
+```
+$ rails server
+```
 
-firmo hollanda
 
-roodz fernando fleurant 
 
-TBA
+## 🤝 contributing
 
-## 🤝 Contributing
+contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](hhttps://github.com/firmoholanda/stay-in-touch/development/issues).
 
-Contributions, issues and feature requests are welcome!
+1. fork it (https://github.com/firmoholanda/stay-in-touch/development/fork)
+2. create your working branch (git checkout -b [choose-a-name])
+3. commit your changes (git commit -am 'what this commit will fix/add/improve')
+4. push to the branch (git push origin [chosen-name])
+5. create a new pull request
 
-Feel free to check the [issues page](issues/).
 
-## Show your support
 
-Give a ⭐️ if you like this project!
+## 🤖 contributor
 
-## Acknowledgments
 
-TBA
+firmo holanda - [GitHub](https://github.com/firmoholanda)
 
-## 📝 License
+roodz fernando fleurant - [GitHub](https://github.com/roodzfernando)
 
-TBA
 
+
+## 🙋‍♂ show your support
+
+give a ⭐️ if you like this project!
+
+
+
+## 📝 license
+
+this project is [MIT](https://github.com/firmoholanda/stay-in-touch/development/license.txt) licensed.

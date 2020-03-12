@@ -1,4 +1,13 @@
 module ApplicationHelper
+  def full_title(page_title = '')
+    base_title = 'stay-in-touch app'
+    if page_title.empty?
+      base_title
+    else
+      page_title + ' | ' + base_title
+    end
+  end
+
   def menu_link_to(link_text, link_path)
     class_name = current_page?(link_path) ? 'menu-item active' : 'menu-item'
 
@@ -14,5 +23,10 @@ module ApplicationHelper
     else
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
+  end
+
+  # Returns true if the user is logged in, false otherwise.
+  def logged_in?
+    !current_user.nil?
   end
 end

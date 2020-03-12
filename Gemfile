@@ -23,11 +23,8 @@ gem 'bootstrap-sass', '3.4.1'
 gem 'jquery-rails'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'font-awesome-rails'
-gem 'faker', '1.7.3'
 
 # Use for testing
-gem 'rails-controller-testing'
-gem 'rspec-rails'
 gem 'rubocop'
 
 # compatible with windows dev
@@ -41,6 +38,10 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker', '1.7.3'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :test do
@@ -53,7 +54,10 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring  
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.0.0'  
+end
+
+group :production do
   gem 'webpacker', '~> 4.0'
 end
 
