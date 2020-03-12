@@ -1,7 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Friendship, type: :model do
-
   let(:active_friend) { FactoryBot.create :user }
   let(:passive_friend) { FactoryBot.create :user }
 
@@ -22,5 +21,4 @@ RSpec.describe Friendship, type: :model do
       end
     end
   end
-
 end

@@ -1,7 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-
   context 'association tests' do
     describe 'comment model associations' do
       it 'belongs to user' do
@@ -15,5 +14,4 @@ RSpec.describe Comment, type: :model do
       end
     end
   end
-
 end

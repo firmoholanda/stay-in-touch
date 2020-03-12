@@ -1,5 +1,4 @@
 module UsersHelper
-
   def pending?(user)
     current_user.friendships.find_by(passive_friend_id: user.id, approved: false)
   end
