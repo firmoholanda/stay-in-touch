@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page], per_page: 10)
-    friendships = current_user.friendships
+    @friendships = current_user.friendships
+    @inverse_friendships = current_user.inverse_friendships
   end
 
   def show
