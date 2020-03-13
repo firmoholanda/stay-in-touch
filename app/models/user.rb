@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, length: { maximum: 50 }
 
@@ -21,9 +21,8 @@ class User < ApplicationRecord
   end
 
   def friend_with?(user)
-    if inverse_friendships.find_by(active_friend_id: user.id, approved: true) || friendships.find_by(passive_friend_id: user.id, approved: true)
-      return true
-    end
+    condition1 = inverse_friendships.find_by(active_friend_id: user.id, approved: true)
+    condition2 = friendships.find_by(passive_friend_id: user.id, approved: true)
+    return true if condition1 || condition2
   end
-
 end
