@@ -32,8 +32,11 @@ class FriendshipsController < ApplicationController
 
   def update
     active_friend = User.find(params[:id])
-    friendship = current_user.inverse_friendships.find_by(active_friend_id: active_friend.id)
+    friendship = current_user.inverse_friendships.find_by(active_friend_id: active_friend.id)    
+    friendship_inverse = current_user.friendships.create(passive_friend_id: active_friend.id, approved: false)
+
     friendship.update(approved: 'true')
+    friendship_inverse.update(approved: 'true')
 
     if friendship.save
       redirect_to users_path, notice: 'friend updated.'
