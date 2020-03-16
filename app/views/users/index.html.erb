@@ -1,12 +1,7 @@
 <section class="users-section">
-  <ul class="users-list">
-    <% @users.each do |user| %>
-      <li>
-        Name: <%= user.name %>
-        <span class="profile-link">
-          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-        </span>
-      </li>
-    <% end %>
-  </ul>
+  <h1 class="text-center">list of all users in the app</h1>
+  <br>
+  <div class="text-center"> <%= will_paginate %> </div>
+  <%= render partial: "user_table", locals: { users: @users, allow_change: true} %>
+  <div class="text-center"> <%= will_paginate %> </div>
 </section>
