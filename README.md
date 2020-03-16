@@ -30,7 +30,7 @@ this project can be found in https://github.com/firmoholanda/stay-in-touch
 ### ✨ [live version](https://stay-in-touch-firmoholanda.herokuapp.com/)
 
 <a href="https://stay-in-touch-firmoholanda.herokuapp.com/" target="_blank">
-    <img alt="app image" src="https://github.com/firmoholanda/stay-in-touch/blob/pre-production/app/assets/images/app-image.png"/>
+    <img alt="app image" src="https://github.com/firmoholanda/stay-in-touch/blob/development/app/assets/images/app-img.png"/>
 </a>
 
 
