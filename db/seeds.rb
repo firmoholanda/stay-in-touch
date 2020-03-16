@@ -4,7 +4,7 @@ User.create!(name:  "fleurant fernando", email: "fleurantrfernando@gmail.com", p
 User.create!(name:  "firmo holanda", email: "firmo@viize.com", password: "abcd1234", password_confirmation: "abcd1234")
 
 # create other users
-#9.times do |n|
+#97.times do |n|
 #  name  = Faker::Name.name[0..20]
 #  email = Faker::Internet.email
 #  password = "passwd"

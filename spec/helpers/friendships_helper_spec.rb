@@ -1,6 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe FriendshipsHelper, type: :helper do
-
-
 end

@@ -1,7 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  
   let(:user) { FactoryBot.create :user }
   before { sign_in user }
 
@@ -20,5 +19,4 @@ RSpec.describe UsersController, type: :controller do
       expect(assigns(:user)).to eql(new_user)
     end
   end
-
 end

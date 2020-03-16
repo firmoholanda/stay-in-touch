@@ -11,9 +11,13 @@
 
 <article class="timeline">
   <h3>
-    Recent posts
+    recent posts
   </h3>
   <ul class="posts">
-    <%= render @timeline_posts %>
+    <% @timeline_posts.each do |post| %>
+      <% if friend?(post.user) || post.user == current_user%>
+        <%= render post %>
+      <%end%>
+    <%end%>
   </ul>
 </article>

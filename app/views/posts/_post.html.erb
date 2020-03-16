@@ -11,7 +11,6 @@
   <p class="post-content">
     <%= post.content %>
   </p>
-
   <div class='post-comments-section'>
     <% post.comments.each do |comment| %>
       <div class="post-comments">
@@ -26,5 +25,7 @@
       <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
       <%= form.submit 'Comment', class: 'btn btn-secondary' %>
     <% end %>
+      <span><%= pluralize(post.comments.count, 'Comment') %> | <%= pluralize(post.likes.count, 'Like') %></span>
+
   </div>
 </li>
