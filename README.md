@@ -1,6 +1,6 @@
 # 📃 stay-in-touch
 
-in this project, we build a social media app that allows users to post comments, like or dislike a comment, send a friendship invitation and display all information on a timeline.
+This repo includes initial code for social media app. Its purpose is to be a starting point for Microverse students. In this project, we build a social media app that allows users to post comments, like or dislike a comment, send a friendship invitation, and display all information on a timeline.
 
 
 
